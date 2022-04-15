@@ -48,7 +48,7 @@ $(function () {
             data:$(this).serialize(),
             success:function(res){
                 console.log(res.status);
-                if(res.status==0) return layer.msg('登录失败！')
+                if(res.status!=0) return layer.msg('登录失败！')
                 layer.msg('登录成功！')
                 //将登录成功得到的token保存到locastorage中
                 localStorage.setItem('token',res.token)
